@@ -60,12 +60,13 @@ app.on('ready', async () => {
   }
 
   mainWindow = new BrowserWindow({
+    titlebar: false,
     transparent: true,
     resizable: true,
     frame: false,
     show: false,
-    width: 300,
-    height: 728
+    width: 240,
+    height: 528
   });
 
   mainWindow.loadURL(`file://${__dirname}/app.html`);
