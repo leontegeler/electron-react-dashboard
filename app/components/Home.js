@@ -9,12 +9,13 @@ type Props = {};
 export default class Home extends Component<Props> {
   props: Props;
 
+
+
   render() {
     return (
       <div>
         <div className={styles.container} data-tid="container">
           <Clock />
-          <Link to="/counter">to Counter</Link>
         </div>
       </div>
     );
