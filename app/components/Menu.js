@@ -10,13 +10,6 @@ var styles = {
     left: '36px',
     top: '36px'
   },
-  bmBurgerButton: {
-    position: 'fixed',
-    width: '36px',
-    height: '30px',
-    left: '36px',
-    top: '36px'
-  },
   bmBurgerBars: {
     background: '#373a47'
   },
@@ -28,9 +21,14 @@ var styles = {
     background: '#bdc3c7'
   },
   bmMenu: {
-    background: '#373a47',
+    textAlign: 'center',
+    overflow: 'hidden',
+    background: 'rgba(0,0,0,0)',
     padding: '2.5em 1.5em 0',
     fontSize: '1.15em'
+  },
+  bmMenuWrap: {
+    width: '100%'
   },
   bmMorphShape: {
     fill: '#373a47'
@@ -73,7 +71,7 @@ export default class BurgerMenu extends Component {
   render () {
     return (
       <div>
-        <Menu right
+        <Menu
           styles={ styles }
           isOpen={this.state.menuOpen}
           onStateChange={(state) => this.handleStateChange(state)}
