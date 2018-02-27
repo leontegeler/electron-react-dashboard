@@ -66,7 +66,7 @@ app.on('ready', async () => {
     resizable: true,
     frame: false,
     show: false,
-    width: 240,
+    width: 320,
     height: 528
   });
 

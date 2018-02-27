@@ -7,7 +7,7 @@ var styles = {
     position: 'fixed',
     width: '36px',
     height: '30px',
-    left: '36px',
+    left: '6px',
     top: '36px'
   },
   bmBurgerBars: {
