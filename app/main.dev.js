@@ -67,7 +67,7 @@ app.on('ready', async () => {
     frame: false,
     show: false,
     width: 320,
-    height: 528
+    height: 800
   });
 
   mainWindow.loadURL(`file://${__dirname}/app.html`);

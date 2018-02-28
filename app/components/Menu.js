@@ -8,7 +8,7 @@ var styles = {
     width: '36px',
     height: '30px',
     left: '6px',
-    top: '36px'
+    top: '20px'
   },
   bmBurgerBars: {
     background: '#373a47'
@@ -38,7 +38,8 @@ var styles = {
     padding: '0.8em'
   },
   bmOverlay: {
-    background: 'rgba(0, 0, 0, 0.3)'
+    background: 'rgba(0, 0, 0, 0.3)',
+    left: '0px'
   }
 }
 
