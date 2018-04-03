@@ -1,0 +1,46 @@
+.menu .bmBurgerButton {
+  position: fixed;
+  z-index: 1200;
+  width: 36px;
+  height: 30px;
+  left: 6px;
+  top: 20px;
+}
+
+.menu .bmBurgerBars {
+  background: #373a47;
+}
+
+.menu .bmCrossButton {
+  height: 24px;
+  width: 24px;
+}
+
+.menu .bmCross {
+  background: #bdc3c7;
+}
+
+.menu .bmMenu {
+  textAlign: center;
+  overflow: hidden;
+  background: rgba(0,0,0,0);
+  padding: 2.5em 1.5em 0;
+  fontSize: 1.15em;
+}
+
+.menu .bmMenuWrap {
+  width: 100%;
+}
+
+.menu .bmMorphShape {
+  fill: #373a47;
+}
+
+.menu .bmItemList {
+  color: #b8b7ad;
+  padding: 0.8em;
+},
+.menu .bmOverlay {
+  background: rgba(0, 0, 0, 0.6);
+  left: 0px;
+}

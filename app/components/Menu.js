@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { slide as Menu } from 'react-burger-menu'
+import { slide as Menu } from 'react-burger-menu';
 
 var styles = {
   bmBurgerButton: {
     position: 'fixed',
+    zIndex: '1200',
     width: '36px',
     height: '30px',
     left: '6px',
@@ -38,7 +39,7 @@ var styles = {
     padding: '0.8em'
   },
   bmOverlay: {
-    background: 'rgba(0, 0, 0, 0.3)',
+    background: 'rgba(0, 0, 0, 0.6)',
     left: '0px'
   }
 }
@@ -71,7 +72,7 @@ export default class BurgerMenu extends Component {
 
   render () {
     return (
-      <div>
+      <div className="menu-wrap">
         <Menu
           styles={ styles }
           isOpen={this.state.menuOpen}
