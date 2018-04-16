@@ -61,6 +61,7 @@ app.on('ready', async () => {
 
   mainWindow = new BrowserWindow({
     titleBarStyle: "hidden",
+    titleBarAppearsTransparent: true,
     transparent: true,
     shadow: false,
     resizable: true,
