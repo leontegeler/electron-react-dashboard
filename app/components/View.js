@@ -1,5 +1,7 @@
 import React from 'react';
 import SwipeableViews from 'react-swipeable-views';
+import Spotify from './Spotify.js';
+import GLogin from './GoogleLogin.js';
 
 const styles = {
   slide: {
@@ -8,28 +10,25 @@ const styles = {
     color: '#fff',
   },
   slide1: {
-    background: '#FEA900',
+    backgroundColor: '#FEA900',
   },
   slide2: {
-    background: '#B3DC4A',
+    backgroundColor: '#B3DC4A',
   },
   slide3: {
-    background: '#6AC0FF',
+    backgroundColor: '#6AC0FF',
   },
 };
 
-const DemoTabs = () => (
-  <SwipeableViews>
-    <div style={Object.assign({}, styles.slide, styles.slide1)}>
-      slide n°1
-    </div>
-    <div style={Object.assign({}, styles.slide, styles.slide2)}>
-      slide n°2
-    </div>
-    <div style={Object.assign({}, styles.slide, styles.slide3)}>
-      slide n°3
-    </div>
-  </SwipeableViews>
-);
+
+function DemoTabs() {
+  return (
+    <SwipeableViews enableMouseEvents>
+      <div style={Object.assign({}, styles.slide, styles.slide1)}>slide n°1<Spotify className="spotify" /></div>
+      <div style={Object.assign({}, styles.slide, styles.slide2)}>slide n°2<GLogin /></div>
+      <div style={Object.assign({}, styles.slide, styles.slide3)}>slide n°3</div>
+    </SwipeableViews>
+  );
+}
 
 export default DemoTabs;

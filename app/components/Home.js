@@ -21,8 +21,6 @@ export default class Home extends Component<Props> {
         <div className={styles.container} data-tid="container">
           <Clock />
           <DemoTabs />
-          <Spotify className="spotify" />
-          <GLogin />
         </div>
       </div>
     );
