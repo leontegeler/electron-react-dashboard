@@ -196,6 +196,7 @@
     "electron-cookies": "^1.1.0",
     "electron-debug": "^1.5.0",
     "electron-oauth-helper": "^2.0.3",
+    "electron-oauth2": "^3.0.0",
     "font-awesome": "^4.7.0",
     "history": "^4.7.2",
     "material-ui": "^0.20.0",
