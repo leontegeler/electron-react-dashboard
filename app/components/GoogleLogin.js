@@ -1,34 +1,36 @@
 import React from 'react';
-import { GoogleLogin } from 'react-google-login-component';
+import ReactGoogleAuth from 'react-google-auth';
 
-class GLogin extends React.Component{
-
-  constructor (props, context) {
-    super(props, context);
-  }
-
-  responseGoogle (googleUser) {
-    var id_token = googleUser.getAuthResponse().id_token;
-    var googleId = googleUser.getId();
-
-    console.log({ googleId });
-    console.log({accessToken: id_token});
-    //anything else you want to do(save to localStorage)...
-  }
-
-  render () {
-    return (
-      <div>
-        <GoogleLogin socialId="578903203831-rrit8sghtqd8bhjc82r9lksei9rt6egc.apps.googleusercontent.com"
-                     className="google-login"
-                     scope="profile"
-                     fetchBasicProfile={false}
-                     responseHandler={this.responseGoogle}
-                     buttonText="Login With Google"/>
-      </div>
-    );
-  }
-
+function GLogin(props) {
+    console.log("gapi exists", gapi);
+    return <div>
+        <h1>App goes here</h1>
+        <button onClick={props.onSignOutClick}>Sign out</button>
+    </div>;
 }
 
-export default GLogin;
+function Loader(props) {
+    return <div>Loading...</div>;
+}
+
+function SignIn(props) {
+    if(props.initializing) {
+        return <div className="Text Text-emphasis">Initializing...</div>;
+    }
+    if(props.error) {
+        console.log('Error', props.error);
+        return <div className="Text Text-strong">Error!</div>;
+    }
+    return <div>
+        <button className="Button Button-primary" onClick={props.onSignInClick}>Sign in</button>
+        {props.signingIn && <div>Signing in...</div>}
+    </div>;
+}
+
+export default ReactGoogleAuth({
+    clientId: "828692616521-a30cidgltv5cfhg8fbi344i9sqquj138.apps.googleusercontent.com",
+    discoveryDocs: ["https://sheets.googleapis.com/$discovery/rest?version=v4"],
+    loader: Loader,
+    scope: "https://www.googleapis.com/auth/spreadsheets",
+    signIn: SignIn
+})(GLogin);
