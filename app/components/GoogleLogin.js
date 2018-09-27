@@ -11,12 +11,13 @@ export default class Glogin extends Component {
   }
 
   handleClick() {
-      console.log('test')
-      const myApiOauth = new ElectronGoogleOAuth2(
-        'CLIENT_ID',
-        'CLIENT_SECRET',
-        ['https://www.googleapis.com/auth/drive.metadata.readonly']
-      );
+    const BrowserWindow = electron.remote.BrowserWindow;
+    console.log('test')
+    const myApiOauth = new ElectronGoogleOAuth2(
+      'CLIENT_ID',
+      'CLIENT_SECRET',
+      ['https://www.googleapis.com/auth/drive.metadata.readonly']
+    );
 
       myApiOauth.openAuthWindowAndGetTokens()
         .then(token => {

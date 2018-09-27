@@ -18,7 +18,7 @@ export default class Clock extends Component {
   render() {
     return (
       <div>
-        <p className={styles.time} data-tid="time"><Time value={this.state.date} format="hh:mm" /></p>
+        <p className={styles.time} data-tid="time"><Time value={this.state.date} format="HH:mm" /></p>
         <hr />
         <p><Time value={this.state.date} format="DD.MM.YYYY" /> </p>
       </div>
