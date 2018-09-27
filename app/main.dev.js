@@ -12,7 +12,6 @@
  */
 import { app, BrowserWindow } from 'electron';
 import MenuBuilder from './menu';
-import ElectronGoogleOAuth2 from '@getstation/electron-google-oauth2';
 
 let mainWindow = null;
 
@@ -73,18 +72,6 @@ app.on('ready', async () => {
   });
 
   mainWindow.loadURL(`file://${__dirname}/app.html`);
-
-  console.log('test')
-  const myApiOauth = new ElectronGoogleOAuth2(
-    'CLIENT_ID',
-    'CLIENT_SECRET',
-    ['https://www.googleapis.com/auth/drive.metadata.readonly']
-  );
-
-  myApiOauth.openAuthWindowAndGetTokens()
-    .then(token => {
-      // use your token.access_token
-    });
 
 
   // @TODO: Use 'ready-to-show' event

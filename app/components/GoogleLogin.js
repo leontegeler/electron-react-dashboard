@@ -1,22 +1,35 @@
-import React from 'react';
+import electron, { app, BrowserWindow } from 'electron';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import GoogleLogin from 'react-google-login';
+import ElectronGoogleOAuth2 from '@getstation/electron-google-oauth2';
 
+export default class Glogin extends Component {
 
-const responseGoogle = (response) => {
-  console.log(response);
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+      console.log('test')
+      const myApiOauth = new ElectronGoogleOAuth2(
+        'CLIENT_ID',
+        'CLIENT_SECRET',
+        ['https://www.googleapis.com/auth/drive.metadata.readonly']
+      );
+
+      myApiOauth.openAuthWindowAndGetTokens()
+        .then(token => {
+          // use your token.access_token
+        });
+    }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.handleClick}>Google Login</button>
+        <br />
+      </div>
+    )
+  }
 }
-
-function GLogin() {
-  return(
-    <GoogleLogin
-      clientId="828692616521-a30cidgltv5cfhg8fbi344i9sqquj138.apps.googleusercontent.com"
-      buttonText="Login"
-      onSuccess={responseGoogle}
-      onFailure={responseGoogle}
-    />,
-    document.getElementById('googleButton')
-  );
-}
-
-export default GLogin;
